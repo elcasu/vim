@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/casu/proyectos/admision/.git'
+let g:netrw_dirhist_2='/home/casu/git-tools'
+let g:netrw_dirhist_3='/media/windows/AspDotNetStorefront9.3'
+let g:netrw_dirhist_4='/home/casu/Facultad/tesis/3_extraccion_caracteristicas'
+let g:netrw_dirhist_5='/home/casu/fjs/cms/src/Admin/AdminBundle/Resources/views/Form'
+let g:netrw_dirhist_6='/home/casu/fjs/samvilla/ASP/api/consumers'
+let g:netrw_dirhist_7='/home/casu/.config/awesome'
