@@ -15,3 +15,10 @@ And then create your .vimrc as a symlink to .vim/vimrc:
 ln -s ~/.vim/vimrc .vimrc
 ```
 
+I'm using Vundle to manage plugins, so in order to make this work, run from ViM:
+
+``` vim
+:BundleInstall
+```
+
+And that's it! :-)
