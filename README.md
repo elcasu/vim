@@ -1,3 +1,6 @@
+Casu's ViM config
+=================
+
 This is my current ViM configuration
 
 To install, just clone this project:
