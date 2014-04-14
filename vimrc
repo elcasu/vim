@@ -4,7 +4,6 @@ set nobackup
 set noswapfile
 set ignorecase
 set smartcase
-set incsearch
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -20,11 +19,25 @@ set foldenable
 set foldmethod=marker
 filetype plugin indent on
 set foldlevelstart=0
+let mapleader = ","
+nnoremap <leader>N :setlocal number!<cr>
 " }}}
 
 " Color Scheme ----------------- {{{
 "colorscheme marklar
 colorscheme casu
+" }}}
+
+" Search ------------ {{{
+set hlsearch incsearch
+noremap <silent><leader>. :nohlsearch<cr>
+" }}}
+
+" Syntax higlight ---- {{{
+" Trailing whitespaces
+highlight trailingWhitespaces ctermbg=green guibg=green
+nnoremap <leader>w :match trailingWhitespaces /\v +$/<cr>
+nnoremap <leader>W :match trailingWhitespaces //<cr>
 " }}}
 
 " Bundle configuration ---------- {{{
@@ -93,7 +106,6 @@ noremap <C-up> 3<C-w>+
 noremap <C-down> 3<C-w>-
 
 " Switcheos horizontales y verticales
-let mapleader = ","
 nnoremap <Leader>l <C-w>L
 nnoremap <Leader>k <C-w>K
 nnoremap <Leader>j <C-w>J
@@ -126,7 +138,7 @@ inoremap jk <esc>
 " inoremap { {}<esc>ha<cr><esc>kA<cr>
 " }}}
 
-" 'Forzamos' las viejas costumbres ---------- {{{
+" 'Forzamos' las nuevas costumbres ---------- {{{
 " Me fuerzo la costumbre deshabilitando <esc> :-P
 inoremap <esc> <nop>
 
@@ -137,7 +149,7 @@ noremap <up> <nop>
 noremap <down> <nop>
 " }}}
 
-"Operator pending mappings ----------{{{
+" Operator pending mappings ----------{{{
 " Operar sobre la seleccion en el siguiente/anterior par de ()
 onoremap in( :<c-u>normal! f(vi<cr>
 onoremap il( :<c-u>normal! F)vi<cr>
