@@ -143,10 +143,10 @@ inoremap jk <esc>
 inoremap <esc> <nop>
 
 " Lo mismo para las flechitas
-noremap <left> <nop>
-noremap <right> <nop>
-noremap <up> <nop>
-noremap <down> <nop>
+" noremap <left> <nop>
+" noremap <right> <nop>
+" noremap <up> <nop>
+" noremap <down> <nop>
 " }}}
 
 " Operator pending mappings ----------{{{
@@ -196,3 +196,7 @@ augroup filetype_vim
 augroup END
 " }}}
 
+" Sessions ---------- {{{
+noremap <F6> :mksession ~/.vim/sessions/last-session.vim<cr>
+noremap <F7> :source ~/.vim/sessions/last-session.vim<cr>
+" }}}
