@@ -140,7 +140,7 @@ inoremap jk <esc>
 
 " 'Forzamos' las nuevas costumbres ---------- {{{
 " Me fuerzo la costumbre deshabilitando <esc> :-P
-inoremap <esc> <nop>
+" inoremap <esc> <nop>
 
 " Lo mismo para las flechitas
 " noremap <left> <nop>
@@ -198,5 +198,5 @@ augroup END
 
 " Sessions ---------- {{{
 noremap <F6> :mksession ~/.vim/sessions/last-session.vim<cr>
-noremap <F7> :source ~/.vim/sessions/last-session.vim<cr>
+"noremap <F7> :source ~/.vim/sessions/last-session.vim<cr>
 " }}}
