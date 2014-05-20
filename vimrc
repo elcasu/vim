@@ -68,7 +68,7 @@ Bundle 'fholgado/minibufexpl.vim'
 Bundle 'docteurklein/vim-symfony'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-notes'
-#Bundle 'Floobits/floobits-vim'
+"Bundle 'Floobits/floobits-vim'
 
 " }}}
 
