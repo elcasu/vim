@@ -20,12 +20,12 @@ set foldmethod=marker
 filetype plugin indent on
 set foldlevelstart=0
 let mapleader = ","
+let maplocalleader = "º"
 nnoremap <leader>N :setlocal number!<cr>
 " }}}
 
 " Color Scheme ----------------- {{{
-"colorscheme marklar
-colorscheme casu
+" colorscheme casu
 " }}}
 
 " Search ------------ {{{
@@ -68,6 +68,10 @@ Bundle 'fholgado/minibufexpl.vim'
 Bundle 'docteurklein/vim-symfony'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-notes'
+Bundle 'docteurklein/php-getter-setter.vim'
+Bundle 'pangloss/vim-javascript'
+Bundle 'othree/javascript-libraries-syntax.vim'
+Bundle 'matthewsimo/angular-vim-snippets'
 "Bundle 'Floobits/floobits-vim'
 
 " }}}
