@@ -26,6 +26,8 @@ nnoremap <leader>N :setlocal number!<cr>
 
 " Color Scheme ----------------- {{{
 " colorscheme casu
+set t_Co=256
+colorscheme fu
 " }}}
 
 " Search ------------ {{{
