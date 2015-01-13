@@ -4,8 +4,8 @@ set nobackup
 set noswapfile
 set ignorecase
 set smartcase
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set autoindent
 syntax on
@@ -74,6 +74,7 @@ Bundle 'docteurklein/php-getter-setter.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'matthewsimo/angular-vim-snippets'
+Bundle 'tpope/vim-rails'
 "Bundle 'Floobits/floobits-vim'
 
 " }}}
