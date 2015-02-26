@@ -40,6 +40,9 @@ noremap <silent><leader>. :nohlsearch<cr>
 highlight trailingWhitespaces ctermbg=green guibg=green
 nnoremap <leader>w :match trailingWhitespaces /\v +$/<cr>
 nnoremap <leader>W :match trailingWhitespaces //<cr>
+
+" Syntax check
+let g:syntastic_quiet_messages = { "level": "warnings" }
 " }}}
 
 " Bundle configuration ---------- {{{
@@ -174,6 +177,9 @@ vnoremap <leader>' <esc>`<i'<esc>`>a'<esc>
 " Ir al principio y al final de la linea actual
 nnoremap H ^
 nnoremap L $
+
+" JSON beautify
+nmap =j :%!python -m json.tool<CR>
 
 " Abreviaturas
 iabbrev @@ info@casu-net.com.ar
