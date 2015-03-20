@@ -22,6 +22,10 @@ set foldlevelstart=0
 let mapleader = ","
 let maplocalleader = "º"
 nnoremap <leader>N :setlocal number!<cr>
+
+" display extra whitespaces
+set list
+set listchars=trail:.
 " }}}
 
 " Color Scheme ----------------- {{{
@@ -64,12 +68,12 @@ Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'ragtag.vim'
-Bundle 'YankRing.vim'
+"Bundle 'YankRing.vim'
 Bundle 'http://github.com/rstacruz/sparkup.git', {'rtp': 'vim/'}
 Bundle 'surround.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'vim-scripts/Conque-Shell'
-Bundle 'fholgado/minibufexpl.vim'
+"Bundle 'fholgado/minibufexpl.vim'
 Bundle 'docteurklein/vim-symfony'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-notes'
@@ -78,6 +82,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'matthewsimo/angular-vim-snippets'
 Bundle 'tpope/vim-rails'
+Bundle "terryma/vim-multiple-cursors"
 "Bundle 'Floobits/floobits-vim'
 
 " }}}
@@ -128,7 +133,7 @@ nnoremap <Leader>m <C-w>\|<C-w>_
 nnoremap <Leader>n <C-w>=
 
 " MiniBufExpl
-nnoremap <Leader>b :MBEToggle<cr>
+"nnoremap <Leader>b :MBEToggle<cr>
 
 " }}}
 
