@@ -24,8 +24,8 @@ let maplocalleader = "º"
 nnoremap <leader>N :setlocal number!<cr>
 
 " display extra whitespaces
-set list
-set listchars=trail:.
+"set list
+"set listchars=trail:.
 " }}}
 
 " Color Scheme ----------------- {{{
@@ -97,7 +97,7 @@ let g:nerdtree_tabs_open_on_console_startup=0
 
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp\|vendor\|cache$',
+  \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp\|vendor\|cache$\|node_modules\|bower_components',
   \ 'file': '\.so$\|\.dat$|\.DS_Store$'
   \ }
 
