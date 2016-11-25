@@ -22,6 +22,7 @@ set foldlevelstart=0
 let mapleader = ","
 let maplocalleader = "º"
 nnoremap <leader>N :setlocal number!<cr>
+nnoremap <leader>q ysiw
 
 " display extra whitespaces
 "set list
@@ -47,6 +48,8 @@ nnoremap <leader>W :match trailingWhitespaces //<cr>
 
 " Syntax check
 let g:syntastic_quiet_messages = { "level": "warnings" }
+let g:syntastic_disabled_filetypes=['html']
+let g:syntastic_ignore_files = ['\m\.html$']
 " }}}
 
 " Bundle configuration ---------- {{{
@@ -83,6 +86,7 @@ Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'matthewsimo/angular-vim-snippets'
 Bundle 'tpope/vim-rails'
 Bundle "terryma/vim-multiple-cursors"
+Bundle "tpope/vim-unimpaired"
 "Bundle 'Floobits/floobits-vim'
 
 " }}}
@@ -91,13 +95,18 @@ Bundle "terryma/vim-multiple-cursors"
 noremap <F2> :NERDTreeToggle<CR>
 noremap <F3> :NERDTreeFind<CR>:NERDTreeTabsOpen<CR>
 let g:nerdtree_tabs_open_on_console_startup=0
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeGlyphReadOnly = 1
+
 " }}}
 
 " Ctrl-P Configuration -------- {{{
 
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp\|vendor\|cache$\|node_modules\|bower_components',
+  \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp\|vendor\|cache$\|node_modules\|bower_components\|target',
   \ 'file': '\.so$\|\.dat$|\.DS_Store$'
   \ }
 
@@ -217,4 +226,19 @@ augroup END
 " Sessions ---------- {{{
 noremap <F6> :mksession ~/.vim/sessions/last-session.vim<cr>
 "noremap <F7> :source ~/.vim/sessions/last-session.vim<cr>
+" }}}
+
+" Function keys for TERM=xterm in osX ------------- {{{
+map <Esc>OP <F1>
+map <Esc>OQ <F2>
+map <Esc>OR <F3>
+map <Esc>OS <F4>
+map <Esc>[16~ <F5>
+map <Esc>[17~ <F6>
+map <Esc>[18~ <F7>
+map <Esc>[19~ <F8>
+map <Esc>[20~ <F9>
+map <Esc>[21~ <F10>
+map <Esc>[23~ <F11>
+map <Esc>[24~ <F12>
 " }}}
