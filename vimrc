@@ -106,7 +106,7 @@ let g:NERDTreeGlyphReadOnly = 1
 
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp\|vendor\|cache$\|node_modules\|bower_components\|target',
+  \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp\|vendor\|cache$\|node_modules\|bower_components\|target\|coverage',
   \ 'file': '\.so$\|\.dat$|\.DS_Store$'
   \ }
 
