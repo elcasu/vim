@@ -23,6 +23,8 @@ let mapleader = ","
 let maplocalleader = "º"
 nnoremap <leader>N :setlocal number!<cr>
 nnoremap <leader>q ysiw
+noremap mm :NERDTreeToggle<CR>
+set timeoutlen=200 ttimeoutlen=0
 
 " display extra whitespaces
 "set list
@@ -47,9 +49,34 @@ nnoremap <leader>w :match trailingWhitespaces /\v +$/<cr>
 nnoremap <leader>W :match trailingWhitespaces //<cr>
 
 " Syntax check
-let g:syntastic_quiet_messages = { "level": "warnings" }
+" let g:syntastic_quiet_messages = { "level": "warnings" }
 let g:syntastic_disabled_filetypes=['html']
 let g:syntastic_ignore_files = ['\m\.html$']
+"let g:syntastic_javascript_checkers = ['eslint']
+" autocmd FileType javascript let b:syntastic_checkers = findfile('.eslintrc.js', '.;') !=# '' ? ['eslint'] : []
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_loc_list_height = 5
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_error_symbol = '❌'
+let g:syntastic_style_error_symbol = '⁉️'
+let g:syntastic_warning_symbol = '⚠️'
+let g:syntastic_style_warning_symbol = '💩'
+highlight link SyntasticErrorSign SignColumn
+highlight link SyntasticWarningSign SignColumn
+highlight link SyntasticStyleErrorSign SignColumn
+highlight link SyntasticStyleWarningSign SignColumn
+
+
+
+
+let g:jsx_ext_required = 0
 " }}}
 
 " Bundle configuration ---------- {{{
@@ -71,23 +98,27 @@ Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'ragtag.vim'
-"Bundle 'YankRing.vim'
 Bundle 'http://github.com/rstacruz/sparkup.git', {'rtp': 'vim/'}
 Bundle 'surround.vim'
 Bundle 'kien/ctrlp.vim'
-Bundle 'vim-scripts/Conque-Shell'
-"Bundle 'fholgado/minibufexpl.vim'
+"Bundle 'vim-scripts/Conque-Shell'
 Bundle 'docteurklein/vim-symfony'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-notes'
 Bundle 'docteurklein/php-getter-setter.vim'
-Bundle 'pangloss/vim-javascript'
-Bundle 'othree/javascript-libraries-syntax.vim'
+"Bundle 'pangloss/vim-javascript'
+"Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'matthewsimo/angular-vim-snippets'
 Bundle 'tpope/vim-rails'
-Bundle "terryma/vim-multiple-cursors"
-Bundle "tpope/vim-unimpaired"
-"Bundle 'Floobits/floobits-vim'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'lrvick/Conque-Shell'
+Bundle 'moll/vim-node'
+
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'isRuslan/vim-es6'
+Plugin 'mxw/vim-jsx'
+Plugin 'pangloss/vim-javascript'
 
 " }}}
 
@@ -106,7 +137,7 @@ let g:NERDTreeGlyphReadOnly = 1
 
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp\|vendor\|cache$\|node_modules\|bower_components\|target\|coverage',
+  \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp\|vendor\|cache$\|node_modules\|bower_components\|target\|coverage\|android\|ios',
   \ 'file': '\.so$\|\.dat$|\.DS_Store$'
   \ }
 
@@ -241,4 +272,24 @@ map <Esc>[20~ <F9>
 map <Esc>[21~ <F10>
 map <Esc>[23~ <F11>
 map <Esc>[24~ <F12>
+" }}}
+
+" Snippets ------------- {{{
+":source ~/.vim/snippets/html.snippets
+" }}}
+
+" Nodejs debugging ------------- {{{
+"
+" please install ConqueShell (https://github.com/lrvick/Conque-Shell)
+function! DebugJs()
+  let cmd="node --debug-brk "
+  if( expand('%:e') == "coffee")
+    let cmd="coffee --nodejs --debug-brk "
+  endif
+  "exec "silent ConqueTermVSplit bash -ic \"(" . cmd . @% . " &) ; sleep 1s && node-vim-inspector\""
+  exec "silent ConqueTermVSplit bash -ic \"node-vim-inspector\""
+endfunction
+
+" launch debug on ctrl-d
+nnoremap <C-d> :call DebugJs()<CR>   
 " }}}
